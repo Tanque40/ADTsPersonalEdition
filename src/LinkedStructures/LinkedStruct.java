@@ -260,13 +260,21 @@ public class LinkedStruct<T>{
                     newNode.setNext(front);
                     front = newNode;
                 } else {
-                    previus.setNext(newNode);
                     newNode.setNext(current);
+                    previus.setNext(newNode);
                 }
+                count++;
             }
         }
 
         return inserted;
+    }
+
+    /*
+     *  
+     */
+    public int deleteRepeated(){
+
     }
 
     //** Return a String with the information of the Structure **//
