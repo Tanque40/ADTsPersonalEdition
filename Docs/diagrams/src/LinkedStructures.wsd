@@ -1,0 +1,66 @@
+@startuml LinkedStructures
+class LinearNode<T>{
+    .. Attributes ..
+    
+    - next: LinearNode<T>
+    - element: T
+
+    ____
+    .. Constructors ..
+
+    + LinearNode()
+    + LinearNode(T)
+
+    .. Functions ..
+
+    + getNext(): LinearNode<T>
+    + setNext(): void
+
+    + getElement(): T
+    + setElement(T): void
+
+}
+class LinkedStruct<T>{
+    .. Attributes ..
+
+    - count: int
+    - front: LinearNode<T>
+
+    ____
+    .. Constructors ..
+
+    + LinkedStruct()
+
+    .. Functions ..
+
+    + add(T, int): void
+    + remove(int): void
+    + get(int): T
+    + set(t, int): void
+    + isEmpty(): boolean
+    + size(): int
+    + iterator(): Iterator<T>
+    + deletePrevTo(T) : boolean
+    + deleteNextTo(T): boolean
+    + insertBefore(T, T): boolean
+    + deleteRepeated(): int
+
+    + toString(): String
+}
+class LinkedStructIterator<T>{
+    .. Attributes ..
+
+    - current: LinearNode<T>
+
+    ____
+    .. Constructor ..
+
+    + LinkedStructIterator(LinearNode<T>)
+
+    .. Functions ..
+
+    + hasNext(): boolean
+    + next(): T
+    + remove() throws UnsupportedOperationException: void
+}
+@enduml

@@ -16,7 +16,7 @@ public class EmptyCollectionException extends RuntimeException{
     }
 
     /*
-     * Constructor for be a specific whith the message for each collection
+     * Constructor for be a specific with the message for each collection
      * @param collection T for indicate what is the empty collection 
      */
     public <T> EmptyCollectionException(T collection){

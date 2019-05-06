@@ -22,7 +22,7 @@ public class ElementNotFoundException extends RuntimeException{
     }
 
     /*   
-     * Constructor for a specific exception whith generic types for the collections.
+     * Constructor for a specific exception with generic types for the collections.
      * @param collection T is the collection that does not have the element.
      * @param element T is the element that was tried to found.
      */

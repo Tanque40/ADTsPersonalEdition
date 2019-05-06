@@ -1,0 +1,23 @@
+@startuml Exceptions
+class ElementNotFoundException extends RuntimeException{
+    ____
+    .. Constructors ..
+    
+    + ElementNotFoundException()
+    + ElementNotFoundException(T, T)
+}
+class EmptyCollectionException extends RuntimeException{
+    ____
+    .. Constructors ..
+
+    + EmptyCollectionException()
+    + EmptyCollectionException(T)
+}
+class ParamErrorException extends RuntimeException{
+    ____
+    .. Constructors ..
+
+    + ParamErrorException()
+    + ParamErrorException(String)
+}
+@enduml
