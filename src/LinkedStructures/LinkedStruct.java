@@ -3,8 +3,10 @@
  */
 package LinkedStructures;
 
-
-import Exceptions.ParamErrorException;
+//** Import to manage exceptions **//
+import Exceptions.*;
+//** Import to help in some functions **//
+import Sets.*;
 
 
 /*
@@ -271,10 +273,27 @@ public class LinkedStruct<T>{
     }
 
     /*
-     *  
+     * Remove the repeated elements in the structure.
+     * Return the number of elements deleted.
      */
     public int deleteRepeated(){
-
+        LinearNode<T> current, previus = null;
+        SetADT<T> aux = new SetADT<T>;
+        int deleted = 0, i = 1;
+        
+        current = front;
+        while(i <= size()){
+            if(aux.contains(current.getElement())){
+                previous.setNext(current.getNext());
+                current = previous.getNext();
+            } else {
+                aux.add(current.getElement());
+                previous = current;
+                current = current.getNext();
+            }
+            i++;
+        }
+        return deleted;
     }
 
     //** Return a String with the information of the Structure **//
