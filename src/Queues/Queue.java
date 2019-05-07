@@ -26,6 +26,6 @@ package Queues;
  *
  * @author bruno
  */
-public class CircularQueue {
+public class Queue {
     
 }

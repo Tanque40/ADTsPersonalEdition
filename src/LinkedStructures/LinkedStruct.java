@@ -3,6 +3,8 @@
  */
 package LinkedStructures;
 
+//** Import an Iterator **//
+import java.util.Iterator;
 //** Import to manage exceptions **//
 import Exceptions.*;
 //** Import to help in some functions **//
@@ -22,7 +24,7 @@ public class LinkedStruct<T>{
 
     //** Create a new empty Linked Strucure **//
     public LinkedStruct(){
-        cont = 0;
+        count = 0;
         front = null;
     }
 
@@ -34,7 +36,7 @@ public class LinkedStruct<T>{
      * if pos > count, add in the position count + 1
      */
     public void add(T element, int pos){
-        LinearNode<T> node = new LinearNode<T>(element);
+        LinearNode<T> node = new LinearNode(element);
         LinearNode<T> current;
         int i;
 
@@ -66,11 +68,11 @@ public class LinkedStruct<T>{
      */
     public T remove(int pos) throws ElementNotFoundException{
         LinearNode<T> current, previus = null;
-        T result = null;
+        T result;
         int i;
 
         if(pos < 1 || pos > size()){
-            throw new ElementNotFoundException(this, "Element in the position: " + i);
+            throw new ElementNotFoundException(this, "Element in the position: " + pos);
         }
 
         if(pos == 1){ //If is the first position only change the front
@@ -79,7 +81,7 @@ public class LinkedStruct<T>{
         } else { // For other position
             i = 1;
             current = front;
-            while(i < pos){
+            while(i <= pos){
                 previus = current;
                 current = current.getNext();
                 i++;
@@ -87,7 +89,7 @@ public class LinkedStruct<T>{
             result = current.getElement();
             previus.setNext(current.getNext());
         }
-        cont--;
+        count--;
         return result;
     }
 
@@ -121,7 +123,7 @@ public class LinkedStruct<T>{
         LinearNode<T> current;
 
         if(pos < 1 || pos > size()){
-            throw new ElementNotFoundException(this, "Element in the position: " + i)
+            throw new ElementNotFoundException(this, "Element in the position: " + pos);
         }
 
         current = front;
@@ -158,7 +160,7 @@ public class LinkedStruct<T>{
             throw new ParamErrorException("El parametro está nulo.");
         }
 
-        LinearNode<T> curent, previus = null, antPrevius = null;
+        LinearNode<T> current, previus = null, antPrevius = null;
         boolean delete = false;
         int i = 1;
 
@@ -257,7 +259,7 @@ public class LinkedStruct<T>{
                 }
             }
             if(inserted){ //if the position was found create the new node and insert
-                newNode = LinearNode<T>(newest);
+                newNode = new LinearNode(newest);
                 if(i == 1){ //If the elemnt is in the first position
                     newNode.setNext(front);
                     front = newNode;
@@ -277,8 +279,8 @@ public class LinkedStruct<T>{
      * Return the number of elements deleted.
      */
     public int deleteRepeated(){
-        LinearNode<T> current, previus = null;
-        SetADT<T> aux = new SetADT<T>;
+        LinearNode<T> current, previous = null;
+        SetADT<T> aux = new Set();
         int deleted = 0, i = 1;
         
         current = front;

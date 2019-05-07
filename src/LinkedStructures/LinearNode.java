@@ -6,7 +6,7 @@ package LinkedStructures;
 /*
  * @author Tanque40
  */
-public class LinearNode {
+public class LinearNode<T> {
      /* 
       * Attributes:
       * Reference to "next" Node in Linked List.

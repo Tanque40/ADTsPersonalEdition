@@ -23,7 +23,7 @@ public class Set<T> implements SetADT<T>, Iterable<T>{
     
     //?Constructor of the class, creating a empty set
     public Set(){
-        set = new LinkedStruct<T>();
+        set = new LinkedStruct();
         count = 0;
     }
 
@@ -102,7 +102,7 @@ public class Set<T> implements SetADT<T>, Iterable<T>{
   
     //** Returns the union of this set and the parameter. **//
     public SetADT<T> union(SetADT<T> oSet){
-        Set<T> result = new ArraySet();
+        Set<T> result = new Set();
 
         result.addAll(this);
         result.addAll(oSet);
