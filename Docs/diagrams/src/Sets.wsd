@@ -1,0 +1,7 @@
+@startuml Sets
+class Set<T> extends SetADT, Iterable{
+    .. Atributos ..
+    
+    - nombrevariable: String
+} 
+@enduml
