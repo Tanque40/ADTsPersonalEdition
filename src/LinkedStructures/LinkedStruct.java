@@ -291,20 +291,22 @@ public class LinkedStruct<T> {
     public int deleteRepeated() {
         LinearNode<T> current, previous = null;
         SetADT<T> aux = new Set();
-        int deleted = 0, i = 1;
+        T element;
+        int deleted = 0;
 
         current = front;
-        while (i <= size()) {
-            if (aux.contains(current.getElement())) {
+        while (current != null) {
+            element = current.getElement();
+            if (aux.contains(element)) {
                 previous.setNext(current.getNext());
                 current = previous.getNext();
+                count--;
                 deleted++;
             } else {
-                aux.add(current.getElement());
+                aux.add(element);
                 previous = current;
                 current = current.getNext();
             }
-            i++;
         }
         return deleted;
     }

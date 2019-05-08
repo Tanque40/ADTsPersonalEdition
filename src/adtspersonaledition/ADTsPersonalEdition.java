@@ -73,9 +73,9 @@ public class ADTsPersonalEdition {
         System.out.println("Insert Person p4 before Person p3: " + ls.insertBefore(p3, p4));
 
         // ? Insert four repeated elements to testing "deleteRepeated" function
-        ls.add(p2, 7);
+        ls.add(p3, 7);
         ls.add(p3, 8);
-        ls.add(p3, 9);
+        ls.add(p4, 9);
         ls.add(p4, 10);
 
         // ! Delete the repeated elements and return the number of eleminate elements
