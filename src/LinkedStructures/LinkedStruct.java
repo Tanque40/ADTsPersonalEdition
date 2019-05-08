@@ -210,7 +210,7 @@ public class LinkedStruct<T> {
             throw new ParamErrorException("El parametro está nulo.");
         }
 
-        LinearNode<T> current, next = null, nextNext = null;
+        LinearNode<T> current, next = null;
         boolean delete = false;
         int i = 1;
 
@@ -228,6 +228,9 @@ public class LinkedStruct<T> {
             if (delete) {
                 if (i == size()) { // The node is the last position
                     delete = false;
+                } else {
+                    next = current.getNext().getNext();
+                    current.setNext(next);
                 }
             }
         }
