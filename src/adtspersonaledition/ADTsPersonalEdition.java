@@ -1,5 +1,5 @@
 /*
- * Examples of the implementation of DataStructures  
+ * Examples of implementation of DataStructures  
  */
 package adtspersonaledition;
 
@@ -14,9 +14,6 @@ import Sets.*;
  */
 public class ADTsPersonalEdition {
 
-    /*
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         // TODO code application logic here
         // ** Implements the Person class for examples **//
@@ -28,6 +25,8 @@ public class ADTsPersonalEdition {
         p4 = new Person("Mia", 18, 1.69, "Running");
         p5 = new Person("Dillion", 19, 1.67, "Read");
         p6 = new Person("Alexis", 21, 1.62, "Watch movies");
+
+        System.out.println("--------- LINKED STRUCTURE TEST ---------");
 
         // ** Testing all the functions of a LinkedStruct **//
         LinkedStruct<Person> ls = new LinkedStruct();
@@ -78,10 +77,49 @@ public class ADTsPersonalEdition {
         ls.add(p4, 9);
         ls.add(p4, 10);
 
+        // ! Show the linked structure before the changues
+        System.out.println("Add a repeated elements and show the result: " + ls.toString());
+
         // ! Delete the repeated elements and return the number of eleminate elements
         System.out.println("The number of the repeated elements: " + ls.deleteRepeated());
+        
+        // ! Show the final content of the LinkedStructure
+        System.out.println(ls.toString());
 
+        System.out.println("\n\n\n");
+        System.out.println("--------- SET TEST ---------");
+        System.out.println("\n\n");
+        
+        //** Testing all the functions of a Set **//
         SetADT<Person> set = new Set();
+        // ! First show the empty set
+        System.out.println(set.toString());
+        // ! Add all the persons used in the previuos example and show the result
+        set.add(p1);
+        set.add(p2);
+        set.add(p3);
+        set.add(p4);
+        set.add(p5);
+        set.add(p6);
+
+        System.out.println(set.toString());
+
+        // ! Create a second SET to use "addAll" function
+        SetADT<Person> set2 = new Set();
+        // ! addAll from set to set2 and show results
+        set2.addAll(set);
+        System.out.println(set2.toString());
+
+        // ! Example of "removeRamdom" function and show results
+        set.removeRandom();
+        System.out.println(set.toString());
+        // ! Use remove with a p1 example
+        set.add(p1); // Only if p1 has be removed
+        set.remove(p1); 
+        System.out.println(set.toString());
+
+
+        
         StackADT<Person> stack = new Stack();
         QueueADT<Person> queue = new Queue();
     }

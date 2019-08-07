@@ -161,7 +161,7 @@ public class LinkedStruct<T> {
      */
     public boolean deletePrevTo(T info) {
         if (info == null) {
-            throw new ParamErrorException("El parametro está nulo.");
+            throw new ParamErrorException("The param is null.");
         }
 
         LinearNode<T> current, previus = null, antPrevius = null;
@@ -207,7 +207,7 @@ public class LinkedStruct<T> {
      */
     public boolean deleteNextTo(T info) throws ParamErrorException {
         if (info == null) {
-            throw new ParamErrorException("El parametro está nulo.");
+            throw new ParamErrorException("The param is null.");
         }
 
         LinearNode<T> current, next = null;

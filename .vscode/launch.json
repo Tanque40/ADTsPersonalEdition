@@ -1,0 +1,10 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ADTsPersonalEdition",
+            "request": "launch",
+            "mainClass": "adtspersonaledition.ADTsPersonalEdition"
+        }
+    ]
+}

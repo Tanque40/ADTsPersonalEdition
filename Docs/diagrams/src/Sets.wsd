@@ -1,7 +1,31 @@
 @startuml Sets
 class Set<T> extends SetADT, Iterable{
-    .. Atributos ..
+    .. Attributes ..
     
-    - nombrevariable: String
+    - rand: Random
+    - set: LinkedStruct<T>
+    - count: int
+
+    ____
+    .. Constructors ..
+
+    + Set()
+
+    .. Functions ..
+
+    + add(T): void
+    + addAll(SetADT<T>): void
+    + removeRandom(): T
+    + remove(T): T
+    + union(SetADT<T>): SetADT<T>
+    + intersection(SetADT<T>): SetADT<T>
+    + difference(SetADT<T>): SetADT<T>
+    + contains(T): boolean
+    + equals(SetADT<T>): boolean
+    + isEmpty(): boolean
+    + size(): int
+    + iterato(): Iterator<T>
+    + toString(): String
+    
 } 
 @enduml

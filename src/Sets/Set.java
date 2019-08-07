@@ -59,6 +59,7 @@ public class Set<T> implements SetADT<T>, Iterable<T>{
         }
 
         index = rand.nextInt(count); // -generates a random integer between (0, count-1)
+        index++;
 
         result = set.remove(index);
         count--;
